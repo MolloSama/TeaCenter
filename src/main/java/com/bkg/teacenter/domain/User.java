@@ -11,7 +11,6 @@ public class User {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)//自增长策略
     private String account;  //唯一标识
     private String password;
     private String username;
@@ -25,7 +24,8 @@ public class User {
     protected User() {//无参默认构造器
     }
 
-    public User(String password, String username, String mail, String role, String telephone, String qq, String wechat, String statement) {
+    public User(String account, String password, String username, String mail, String role, String telephone, String qq, String wechat, String statement) {
+        this.account = account;
         this.password = password;
         this.username = username;
         this.mail = mail;

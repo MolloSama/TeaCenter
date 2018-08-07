@@ -1,8 +1,15 @@
 package com.bkg.teacenter.repository;
 
-import com.bkg.teacenter.domain.TradeInfo;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
-public interface TradeInfoRepository extends CrudRepository<TradeInfo, Long> {
+@Repository
+public class TradeInfoRepository {
+    private JdbcTemplate jdbcTemplate;
+
+    public TradeInfoRepository(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
+
 
 }
