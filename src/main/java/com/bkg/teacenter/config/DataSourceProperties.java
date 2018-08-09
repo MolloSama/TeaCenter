@@ -13,7 +13,7 @@ import javax.sql.DataSource;
 
 
 @Component
-@ConfigurationProperties(prefix="ds")
+@ConfigurationProperties
 @PropertySource("classpath:/config/application.properties")
 public class DataSourceProperties {
 
@@ -27,8 +27,6 @@ public class DataSourceProperties {
 
     @Autowired
     private Environment env;
-
-
 
     public String getUrl() {
         return url;

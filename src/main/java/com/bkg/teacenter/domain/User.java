@@ -8,8 +8,6 @@ import javax.persistence.Id;
 @Entity //实体
 public class User {
 
-
-
     @Id
     private String account;  //唯一标识
     private String password;
@@ -21,10 +19,34 @@ public class User {
     private String wechat;
     private String statement;
 
-    protected User() {//无参默认构造器
+    //无参默认构造器
+    public User() {
+        this.account = null;
+        this.password = null;
+        this.username = null;
+        this.mail = null;
+        this.role = null;
+        this.telephone = null;
+        this.qq = null;
+        this.wechat = null;
+        this.statement =null;
+
     }
 
-    public User(String account, String password, String username, String mail, String role, String telephone, String qq, String wechat, String statement) {
+    public User(String account, String password, String username, String mail, String role) {
+        this.account = account;
+        this.password = password;
+        this.username = username;
+        this.mail = mail;
+        this.role = role;
+        this.telephone = null;
+        this.qq = null;
+        this.wechat = null;
+        this.statement =null;
+    }
+
+    public User(String account, String password, String username, String mail,
+                String role, String telephone, String qq, String wechat, String statement) {
         this.account = account;
         this.password = password;
         this.username = username;
